@@ -1,0 +1,6 @@
+node_modules/
+accounts/
+cookies/
+db/
+output/
+.env

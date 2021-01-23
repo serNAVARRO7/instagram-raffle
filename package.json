@@ -1,0 +1,23 @@
+{
+  "name": "instagram-raffle",
+  "version": "1.0.0",
+  "description": "Simple instagram bot to create raffles",
+  "main": "bot.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/serNAVARRO7/instagram-raffle.git"
+  },
+  "keywords": [],
+  "author": "serNAVARRO7",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/serNAVARRO7/instagram-raffle/issues"
+  },
+  "homepage": "https://github.com/serNAVARRO7/instagram-raffle#readme",
+  "dependencies": {
+    "tools-for-instagram": "^1.8.12"
+  }
+}
