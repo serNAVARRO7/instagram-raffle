@@ -15,15 +15,19 @@ function askQuestion(query) {
 
 (async () => {
     console.log("\n -- LOGIN --\n".bold.underline);
-    let ig = await login();
-
+    const ig = await login();
     console.log("\n -- Get the post -- \n".bold.underline);
-    const ans = await askQuestion("Please, enter post URL: ");
-    let posts = await getUserRecentPosts(ig, 'ser_navarro');
-    console.log(posts[0]);
-    let likers = await getRecentPostLikers(ig, posts[0]);
-
+    const answer = await askQuestion("If your last post is post 0, the raffle post is...? ");
+    const posts = await getUserRecentPosts(ig, ig.loggedInUser.username);
+    const likers = await getRecentPostLikers(ig, posts[answer]);
+    console.log(likers.length);
+    if (likers.length > 1000) {
+        console.log('Sorry, too many participants');
+        process.exit();
+    }
+    console.log("\n -- Generating the winner... -- \n".bold.underline);
+    const index = Math.floor(Math.random() * (likers.length + 1));
+    console.log("\n -- The winner is... ".bold.underline + likers[index].username + " congratulations!!\n".bold.underline);
     // If ONLINE_MODE is enabled, this example will run until we send an exit signal
-    process.exit();
-    
+    process.exit(); 
 })();
