@@ -28,6 +28,17 @@ function askQuestion(query) {
     console.log("\n -- Generating the winner... -- \n".bold.underline);
     const index = Math.floor(Math.random() * (likers.length + 1));
     console.log("\n -- The winner is... ".bold.underline + likers[index].username + " congratulations!!\n".bold.underline);
+    // Will save the followers inside the output folder with the format "acountName_followers.json"
+    await getFollowers(ig, ig.loggedInUser.username)
+    const route = './output/' + ig.loggedInUser.username + '_followers.json';
+    const followers = require(route);
+    const found = followers.find(element => element.username == likers[index].username);
+    if (found) {
+        console.log("\n -- The user ".bold.underline + likers[index].username + " follows you\n".bold.underline);
+    }
+    else {
+         console.log("\n -- The user ".bold.underline + likers[index].username + " doesn't follows you\n".bold.underline);
+    }
     // If ONLINE_MODE is enabled, this example will run until we send an exit signal
     process.exit(); 
 })();
