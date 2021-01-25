@@ -20,11 +20,11 @@ Antes de descargar el proyecto y sus dependencias, necesitas tener instalado Nod
 
         npm i
         
-3. Ajustar las variables de entorno que nos permitirán logearnos en Instagram
+3. Ajustar las variables de entorno que nos permitirán logearnos en Instagram:
 
     Para poder funcionar correctamente, es necesario crear el archivo de entorno `.env` y completar la información.
 
-    Ejecutamos el siguiente comando, para crear el archivo .env a partir del ejemplo:
+    Ejecutamos el siguiente comando, para crearlo a partir del ejemplo:
         
         (Windows)
         copy .env-example .env
@@ -34,7 +34,7 @@ Antes de descargar el proyecto y sus dependencias, necesitas tener instalado Nod
         
 ## Puesta en marcha 💡
 
-Una vez esté instalado y completada la información del archivo `.env`, podremos llevar a cabo el sorteo:
+Una vez instalados los paquetes y completada la información del archivo `.env`, podremos llevar a cabo el sorteo:
 
     node bot.js
 
